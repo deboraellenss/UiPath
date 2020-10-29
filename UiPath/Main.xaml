@@ -1,0 +1,1120 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="768,1187" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Main" sap:VirtualizedContainerService.HintSize="752,1022" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtNewExcel" />
+      <Variable x:TypeArguments="x:String" Name="stvalue" />
+      <Variable x:TypeArguments="x:String" Name="mailsubject" />
+      <Variable x:TypeArguments="x:Boolean" Name="ElementExists" />
+      <Variable x:TypeArguments="x:String" Name="stQvalue" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">330,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">360,77.5 360,94.04 487,94.04 487,210 460,210</av:PointCollection>
+        <x:Double x:Key="Width">718</x:Double>
+        <x:Double x:Key="Height">985.5</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">260,184.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">360,235.5 360,254.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadRange AddHeaders="True" DataTable="[dtNewExcel]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="DUPLICADAS MÓVEL." WorkbookPath="C:\Users\debora.e.santos\Desktop\DUPLICADAS Movel e IPTV.xlsm">
+        <ui:ReadRange.Range>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </ui:ReadRange.Range>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ReadRange>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">260,254.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">360,305.5 360,337.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtNewExcel]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="670,5263" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="620,5115" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="578,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[stvalue]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[row(0).ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="578,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[stvalue]" />
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="578,4824" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="0e8246ef0f511db1e611096e111643cb" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="544,4678" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502,4586" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="460,4494" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="418,2264" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="variable1" />
+                                  <Variable x:TypeArguments="x:Object" Name="ValueElemExists" />
+                                  <Variable x:TypeArguments="x:String" Name="variable2" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_151" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="545" OffsetY="359" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8c123d6b4fd0cc85600457ff14b51cec" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_152" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="487" OffsetY="264" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f60a355daa40d5ce15b85b3b0367d733" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_153" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="470" OffsetY="293" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b3e05ceb017cf776fef4894f124701b7" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_154" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="572" OffsetY="338" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="50461fe84bc27258d8db84f6f37a3a98" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_155" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="511" OffsetY="407" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dece12f581f4bbed94d6e65208cd9176" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'wfica32.exe PagOverride'" EmptyField="False" sap:VirtualizedContainerService.HintSize="376,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" SendWindowMessages="False" SimulateType="False" Text="Jur[k(enter)]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5202cfc3aa77f44ac3172fb2f8b42015" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_170" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition OffsetX="650" OffsetY="398" Position="TopLeft" />
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cebab4e9c9cf7638ad2f8eea88c4ebbd" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_174" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition OffsetX="639" OffsetY="425" Position="TopLeft" />
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="41c5c1f9e4715b82ccba67ff41594f6b">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_171" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition OffsetX="834" OffsetY="591" Position="TopLeft" />
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="5a913f710a21d69d6e2414de5b9ecc70">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                </Sequence>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_157" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="883" OffsetY="398" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d844686d7f5adbd92f71a0d013ce6eb9" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="e5a26a306dd21f51038639e6b527464f">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="851, 358, 174, 65" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,154" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="V" KeyModifiers="Ctrl" SpecialKey="False">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a84f829f8642dfc034062a48b765f30" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_158" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="1075" OffsetY="436" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61d0df93245caca15ca1b2b743f09290" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_169" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="1075" OffsetY="436" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61d0df93245caca15ca1b2b743f09290" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                              <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="418,2098" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="bf372166cdc561014a2cb8c5c5f668b2" WaitForReady="COMPLETE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="1252, 567, 23, 19" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_167" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="18971802173291880a10f3f81166facf" TimeoutMS="1000" WaitForReady="COMPLETE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="1263, 574, 7, 6" />
+                                      </ui:Target.ClippingRegion>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="100" DisplayName="Click 'wfica32.exe Analisar'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target Element="{x:Null}" InformativeScreenshot="9999763a5b32e48d11a3d297623084eb" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Analisar - Google Chrome - \\Remote' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="1037, 335, 76, 23" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target Element="{x:Null}" InformativeScreenshot="1519052f3026429a5b0c20021da24b3b" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="1364, 216, 3, 43" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="1365" OffsetY="573" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="de74fa02d619ab05cf504495ad1916a5" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="1366" OffsetY="602" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ab6721ce77c0c0d2cd4d48f40832f45b" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_177" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="1050" OffsetY="338" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="0a868f1c9f888da0fed878cfc4ee8e29" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_179" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target Element="{x:Null}" InformativeScreenshot="5967e05c3ed3d7f26784f2f5df5b6715" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;">
+                                        <ui:Target.ClippingRegion>
+                                          <ui:Region Rectangle="788, 104, 121, 20" />
+                                        </ui:Target.ClippingRegion>
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                </Sequence>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_178" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="926fea455d951f1cc63a5cf36ddc5446" WaitForReady="INTERACTIVE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="791, 100, 108, 27" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'wfica32.exe Decisao'" EmptyField="False" sap:VirtualizedContainerService.HintSize="376,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="Rejeitar[k(enter)]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c678bea696f9d3e09e461586bf0c70eb" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="671" OffsetY="306" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="99ad7c48b197e51f97672e3f3d34bff9" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'wfica32.exe Decisao'" EmptyField="False" sap:VirtualizedContainerService.HintSize="376,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="DP42[k(enter)]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="46732e815c66e378c68f07809edfbed5" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Decisao'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target Element="{x:Null}" InformativeScreenshot="3d9c61c1d41b1edf2aa61237b889d6af" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Decisao - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+                                      <ui:Target.ClippingRegion>
+                                        <ui:Region Rectangle="904, 235, 90, 23" />
+                                      </ui:Target.ClippingRegion>
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                            </Sequence>
+                          </Sequence>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WindowScope>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">260,337.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Fim das Propostas da MÓVEL! Para iniciar o processo de decisão da propostas IPTV pressione ok!&quot;]" TopMost="True">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MessageBox>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_18">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">260,414.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">360,465.5 360,504.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Prezados, boa tarde&quot; &amp; vbnewline &amp; vbnewline  &amp; &quot;Todas as propostas  duplicadas do segmento MOVEL estão viradas no PCO.&quot; &amp; vbnewline &amp; vbnewline &amp;&quot;Cordialmente,&quot; &amp; vbnewline &amp; &quot;Debora Ellen Santos&quot;]" Cc="Santos, Dalmo &lt;dalmo.santos@accenture.com&gt;; Santana, Lucas S. &lt;lucas.s.santana@accenture.com&gt;; Magno, Daniel &lt;daniel.magno@accenture.com&gt;; Cerqueira, Antonino T. &lt;antonino.t.cerqueira@accenture.com&gt;; Dias Maciel, Keller &lt;keller.dias.maciel@accenture.com&gt;; Rezende, Elidia B. &lt;elidia.b.rezende@accenture.com&gt;; Soares de Souza, C. &lt;c.soares.de.souza@accenture.com&gt;; Ferreira, Zaira &lt;zaira.ferreira@accenture.com&gt;; Peixoto Ribeiro, B. &lt;b.peixoto.ribeiro@accenture.com&gt;; Siqueira, Gilmara M. &lt;gilmara.m.siqueira@accenture.com&gt;; Paglione Mazala, F. &lt;f.paglione.mazala@accenture.com&gt; " DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="Base duplicadas para virar no PCO ( Móvel e IPTV)" To="Melo, Jucileia A. &lt;jucileia.a.melo@accenture.com&gt;">
+        <ui:SendOutlookMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+        </ui:SendOutlookMail.Files>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:SendOutlookMail>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">260,504.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Automação Finalizada" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Processo de decisão para Propostas Duplicadas está Concluído!&quot; &amp;vbnewline &amp; &quot;E-mail de conclusão enviado! (:&quot;]" TopMost="True">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MessageBox>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_19">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">260,104.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">360,170.5 360,184.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:GenericValue" Name="WficaExeLogin" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TrayShowDesktopButtonWC...'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_66" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="4" OffsetY="15" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fdffa5cf040fdc2249fa1bfe57917332" Selector="&lt;wnd app='explorer.exe' cls='Shell_TrayWnd' /&gt;&lt;wnd aaname='Show desktop' cls='TrayShowDesktopButtonWClass' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click Image 'explorer.exe'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+          <ui:ClickImage.CursorPosition>
+            <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
+          </ui:ClickImage.CursorPosition>
+          <ui:ClickImage.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+          </ui:ClickImage.Image>
+          <ui:ClickImage.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='explorer.exe' cls='WorkerW' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:ClickImage.Target>
+        </ui:ClickImage>
+        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  Enter user name'" EmptyField="False" sap:VirtualizedContainerService.HintSize="336,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" SendWindowMessages="False" SimulateType="True" Text="TR695384">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2a1dc9e818a2aec9874b0f5d4b34ea72" Selector="&lt;html title='NetScaler Gateway' /&gt;&lt;webctrl id='Enter user name' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <Sequence DisplayName="Type password" sap:VirtualizedContainerService.HintSize="336,320" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="Password" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMgKTMlDwFkOIo1vhhuLXHAAAAAACAAAAAAADZgAAwAAAABAAAAA3SIOWhDuctAmhbMCHNgfYAAAAAASAAACgAAAAEAAAANgHyl6mkTCg2oJu5Z3nvE0QAAAA9gXeJcnjZNbG3n7/e9EOlBQAAACaaVItpgCfc/1GLgKcn8V0zJtuDQ==" Result="[Password]" />
+          <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  passwd'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" SendWindowMessages="False" SimulateType="True" Text="[Password]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="424810b350104787564412d67883ee0f" Selector="&lt;html title='NetScaler Gateway' /&gt;&lt;webctrl id='passwd' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </Sequence>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  Log_On'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_68" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="44" OffsetY="9" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4407f62a0759f0a844343e0a997a04d2" Selector="&lt;html title='NetScaler Gateway' /&gt;&lt;webctrl id='Log_On' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://oisistemas.o...'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_69" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="113" OffsetY="24" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c263733b39422e409a85d03fcb9c8dab" Selector="&lt;html title='Oi Sistemas' /&gt;&lt;webctrl aaname='Aceitar' parentid='genericMessageBoxPopup' tag='A' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  searchInputId'" EmptyField="False" sap:VirtualizedContainerService.HintSize="336,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" SendWindowMessages="False" SimulateType="True" Text="power">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="211a92cb8d3af2458381adc2ac7ed540" Selector="&lt;html title='Oi Sistemas' /&gt;&lt;webctrl id='searchInputId' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG '" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_70" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="23" OffsetY="33" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="743e6e6067223c1cb83efa944eb0c44c" Selector="&lt;html title='Oi Sistemas' /&gt;&lt;webctrl aaname='PowerCurve' parentid='home-screen' tag='IMG' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="25000" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_71" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="42" OffsetY="8" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="62601537da41a9fa6b2433bc2ab6da53" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Oi Sistemas - Internet Explorer' /&gt;&lt;wnd aaname='Notification' cls='DirectUIHWND' /&gt;&lt;ctrl automationid='IENotificationBar' /&gt;&lt;ctrl name='Open' role='push button' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="60000" DisplayName="Click 'wfica32.exe Login'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_72" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="398" OffsetY="237" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9ce6b64027dedb4d52ba812d3f80aa8a" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'wfica32.exe Login'" EmptyField="True" sap:VirtualizedContainerService.HintSize="336,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" SendWindowMessages="False" SimulateType="False" Text="TR695384">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="483fd14f5098fa61bb8b1e882c1d7417" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Login'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_75" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="350" OffsetY="314" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8878459bc39776bb1e2038b3bdcb9b14" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe Login'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_76" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="339" OffsetY="309" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="09a330a528563d21f2c12fab1c6e4162" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <Sequence DisplayName="Type password" sap:VirtualizedContainerService.HintSize="336,320" sap2010:WorkflowViewState.IdRef="Sequence_30">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="Password" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="GetPassword_3" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMgKTMlDwFkOIo1vhhuLXHAAAAAACAAAAAAADZgAAwAAAABAAAAA0wM5xzQ27vdhZkwPeZac/AAAAAASAAACgAAAAEAAAAHuByDE14GmGpRMhcF0NQqkQAAAAlstNFmAbqhBA0JU/LPFFKBQAAAAjcJo2ieRPaL9VhVr+o7IgYZDP5A==" Result="[Password]" />
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'wfica32.exe Login'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" SendWindowMessages="False" SimulateType="False" Text="[Password]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3817ecb5cff6ed6ed5fabd574016acb9" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </Sequence>
+        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="10000" DisplayName="Click 'wfica32.exe Login'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_73" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="506" OffsetY="523" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9e9d646915508f419a7511afad2a4c11" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Login Corporativo - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_74" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="269" OffsetY="374" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="335280b95c104655ae1f6284e81117f6" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'wfica32.exe HomePage'" EmptyField="False" sap:VirtualizedContainerService.HintSize="336,154" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="t" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+          <ui:SendHotkey.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="82fb1210639a54a1f811e6ccd41227d4" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:SendHotkey.Target>
+        </ui:SendHotkey>
+        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'wfica32.exe New'" EmptyField="False" sap:VirtualizedContainerService.HintSize="336,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" SendWindowMessages="False" SimulateType="False" Text="https://powercurve.local.srv.br/WebEngine/[k(enter)]">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="406b4b76576246e1294f9be1915bae1e" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='New Tab - Google Chrome - \\Remote' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="336,106" sap2010:WorkflowViewState.IdRef="Click_77" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="992" OffsetY="12" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="62d49f934bce491490a619ceaf19b372" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+      </Sequence>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_26">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">250,584.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_159" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="545" OffsetY="359" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8c123d6b4fd0cc85600457ff14b51cec" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_160" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="487" OffsetY="264" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f60a355daa40d5ce15b85b3b0367d733" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_161" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="470" OffsetY="293" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b3e05ceb017cf776fef4894f124701b7" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe HomePage'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_162" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="470" OffsetY="300" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="42141d1db74bf12874fd964937340f9b" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='HomePage - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_163" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="511" OffsetY="407" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dece12f581f4bbed94d6e65208cd9176" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'wfica32.exe PagOverride'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" SendWindowMessages="False" SimulateType="False" Text="Jur[k(enter)]">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5202cfc3aa77f44ac3172fb2f8b42015" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_164" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="652" OffsetY="403" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7afa00536576dfe3fdc88001f84ff3f1" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_165" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="883" OffsetY="398" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d844686d7f5adbd92f71a0d013ce6eb9" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_19" Key="v" KeyModifiers="Ctrl" SpecialKey="False">
+          <ui:SendHotkey.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a84f829f8642dfc034062a48b765f30" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:SendHotkey.Target>
+        </ui:SendHotkey>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_166" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="1075" OffsetY="436" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61d0df93245caca15ca1b2b743f09290" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+      </Sequence>
+    </FlowStep>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_27">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">250,684.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_44">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_168" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="1264" OffsetY="577" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="520c890cfb231d2943f58eab23ec6b33" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+      </Sequence>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">250,784.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_46">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_172" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="650" OffsetY="398" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cebab4e9c9cf7638ad2f8eea88c4ebbd" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'wfica32.exe PagOverride'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_173" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="675" OffsetY="479" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3722d389661bfda40f6a33059dd205a3" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='PagOverride - Google Chrome - \\Remote' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+      </Sequence>
+    </FlowStep>
+  </Flowchart>
+</Activity>
